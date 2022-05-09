@@ -1,0 +1,374 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>SQL Documentation Page</title>
+    
+</head>
+<body>
+    <nav id="navbar">
+        <input type="checkbox" id="menu-bar">
+        <label id="label-menu" class="fa fa-bars" for="menu-bar"></label>                
+        <header>
+            <h1>SQL Tutorial</h1>
+        </header>
+        <hr>
+        <ul class="menu">
+            <li><a href="#introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#syntax" class="nav-link">Syntax</a></li>
+            <li><a href="#select_statement" class="nav-link">Select Statement</a></li>
+            <li><a href="#where_statement" class="nav-link">Where Statement</a></li>
+            <li><a href="#insert_statement" class="nav-link">Insert Statement</a></li>
+            <li><a href="#update_statement" class="nav-link">Update Statement</a></li>
+            <li><a href="#delete_statement" class="nav-link">Delete Statement</a></li>
+            <li><a href="#reference" class="nav-link">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <div class="content">
+            <section id="introduction" class="main-section">
+                <header>
+                    <h2>Introduction</h2>
+                </header>
+                <article>
+                    <p>SQL is a standard language for accessing and manipulating databases.</p>
+                    <h3>What is SQL?</h3>
+                    <ul>
+                        <li>SQL stands for Structured Query Language</li>
+                        <li>SQL lets you access and manipulate databases</li>
+                        <li>SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of
+                            the
+                            International Organization for Standardization (ISO) in 1987</li>
+                    </ul>
+                    <h3>What Can SQL do?</h3>
+                    <ul>
+                        <li>SQL can execute queries against a database</li>
+                        <li>SQL can retrieve data from a database</li>
+                        <li>SQL can insert records in a database</li>
+                        <li>SQL can update records in a database</li>
+                        <li>SQL can delete records from a database</li>
+                        <li>SQL can create new databases</li>
+                        <li>SQL can create new tables in a database</li>
+                        <li>SQL can create stored procedures in a database</li>
+                        <li>SQL can create views in a database</li>
+                        <li>SQL can set permissions on tables, procedures, and views</li>
+                    </ul>
+                    <p>Although SQL is an ANSI/ISO standard, there are different versions of the SQL language.</p>
+                    <p>However, to be compliant with the ANSI standard, they all support at least the major commands
+                        (such
+                        as SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner.</p>
+                    <h3>RDBMS</h3>
+                    <p>RDBMS stands for Relational Database Management System.</p>
+                    <p>RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2,
+                        Oracle, MySQL, and Microsoft Access.</p>
+                    <p>The data in RDBMS is stored in database objects called tables. A table is a collection of related
+                        data entries and it consists of columns and rows.</p>
+                    <p>Look at the "Customers" table:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> *</code>
+                        <code><span>FROM</span> Customers;</code>
+                    </div>
+                </article>
+            </section>
+
+            <section id="syntax" class="main-section">
+                <header>
+                    <h2>Syntax</h2>
+                </header>
+                <article>
+                    <h3>Database Tables</h3>
+                    <p>A database most often contains one or more tables. Each table is identified by a name (e.g.
+                        "Customers" or "Orders"). Tables contain records (rows) with data.</p>
+                    <p>In this tutorial we will use the well-known Northwind sample database (included in MS Access and
+                        MS
+                        SQL Server).</p>
+                    <h3>SQL Statements</h3>
+                    <p>Most of the actions you need to perform on a database are done with SQL statements.</p>
+                    <p>The following SQL statement selects all the records in the "Customers" table:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> *</code>
+                        <code><span class="reserved-word">FROM</span> Customers;</code>
+                    </div>
+                    <h3>Semicolon after SQL Statements?</h3>
+                    <p>Some database systems require a semicolon at the end of each SQL statement.</p>
+                    <p>Semicolon is the standard way to separate each SQL statement in database systems that allow more
+                        than
+                        one SQL statement to be executed in the same call to the server.</p>
+                    <p>In this tutorial, we will use semicolon at the end of each SQL statement.</p>
+                    <h3>Some of The Most Important SQL Commands</h3>
+                    <ul>
+                        <li>SELECT</li>
+                        <li>UPDATE</li>
+                        <li>DELETE</li>
+                        <li>INSERT INTO</li>
+                        <li>CREATE DATABASE</li>
+                        <li>ALTER DATABASE</li>
+                        <li>CREATE TABLE</li>
+                        <li>ALTER TABLE</li>
+                        <li>DROP TABLE</li>
+                        <li>CREATE INDEX</li>
+                        <li>DROP INDEX</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="select_statement" class="main-section">
+                <header>
+                    <h2>Select Statement</h2>
+                </header>
+                <article>
+                    <p>The SELECT statement is used to select data from a database.</p>
+                    <p>The data returned is stored in a result table, called the result-set.</p>
+                    <h3>SELECT Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> column1, column2, ...</code>
+                        <code><span class="reserved-word">FROM</span> table_name;</code>
+                    </div>
+                    <p>Here, column1, column2, ... are the field names of the table you want to select data from. If you
+                        want to select all the fields available in the table, use the following syntax:</p>
+                </article>
+                <div class="code-block">
+                    <code><span class="reserved-word">SELECT</span> *</code>
+                    <code><span class="reserved-word">FROM</span> table_name;</code>
+                </div>
+                <h3>SELECT Column Example</h3>
+                <p>The following SQL statement selects the "CustomerName" and "City" columns from the "Customers" table:
+                </p>
+                <div class="code-block">
+                    <code><span class="reserved-word">SELECT</span> CustomerName, City</code>
+                    <code><span class="reserved-word">FROM</span> Customers;</code>
+                </div>
+                <h3>SELECT * Example</h3>
+                <p>The following SQL statement selects all the columns from the "Customers" table:</p>
+                <div class="code-block">
+                    <code><span class="reserved-word">SELECT</span> *</code>
+                    <code><span class="reserved-word">FROM</span> Customers;</code>
+                </div>
+            </section>
+
+            <section id="where_statement" class="main-section">
+                <header>
+                    <h2>Where Statement</h2>
+                </header>
+                <article>
+                    <p>The WHERE clause is used to filter records.</p>
+                    <p>The WHERE clause is used to extract only those records that fulfill a specified condition.</p>
+                    <h3>WHERE Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> column1, column2, ...</code>
+                        <code><span class="reserved-word">FROM</span> table_name</code>
+                        <code><span class="reserved-word">WHERE</span> condition;</code>
+                    </div>
+                    <h3>WHERE Clause Example</h3>
+                    <p>The following SQL statement selects all the customers from the country "Mexico", in the
+                        "Customers"
+                        table:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> *</code>
+                        <code><span class="reserved-word">FROM</span> Customers</code>
+                        <code><span class="reserved-word">WHERE</span> Country='Mexico';</code>
+                    </div>
+                    <h3>Text Fields vs. Numeric Fields</h3>
+                    <p>SQL requires single quotes around text values (most database systems will also allow double
+                        quotes).
+                    </p>
+                    <p>However, numeric fields should not be enclosed in quotes:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> *</code>
+                        <code><span class="reserved-word">FROM</span> Customers</code>
+                        <code><span class="reserved-word">WHERE</span> CustomerID=1;</code>
+                    </div>
+                    <h3>Operators in The WHERE Clause</h3>
+                    <p>The following operators can be used in the WHERE clause:</p>
+                    <table>
+                        <thead>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>=</td>
+                                <td>Equal</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>Greater than</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>Less than</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;=</td>
+                                <td>Greater than or equal</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;=</td>
+                                <td>Less than or equal</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;&gt;</td>
+                                <td>Not equal</td>
+                            </tr>
+                            <tr>
+                                <td>BETWEEN</td>
+                                <td>Between a certain range</td>
+                            </tr>
+                            <tr>
+                                <td>LIKE</td>
+                                <td>Search for a pattern</td>
+                            </tr>
+                            <tr>
+                                <td>IN</td>
+                                <td>To specify multiple possible values for a column</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>The SQL AND, OR and NOT Operators</h3>
+                    <p>The WHERE clause can be combined with AND, OR, and NOT operators.</p>
+                    <p>The AND and OR operators are used to filter records based on more than one condition:</p>
+                    <ul>
+                        <li>The AND operator displays a record if all the conditions separated by AND are TRUE.</li>
+                        <li>The OR operator displays a record if any of the conditions separated by OR is TRUE.</li>
+                    </ul>
+                    <p>The NOT operator displays a record if the condition(s) is NOT TRUE.</p>
+                    <h3>AND Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> column1, column2, ...</code>
+                        <code><span class="reserved-word">FROM</span> table_name</code>
+                        <code><span class="reserved-word">WHERE</span> condition1 <span class="operator">AND</span>
+                            condition2 <span class="operator">AND</span> condition3 ...;</code>
+                    </div>
+                    <h3>OR Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> column1, column2, ...</code>
+                        <code><span class="reserved-word">FROM</span> table_name</code>
+                        <code><span class="reserved-word">WHERE</span> condition1 <span class="operator">OR</span> condition2 <span class="operator">OR</span> condition3 ...;</code>
+                    </div>
+                    <h3>NOT Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">SELECT</span> column1, column2, ...</code>
+                        <code><span class="reserved-word">FROM</span> table_name</code>
+                        <code><span class="reserved-word">WHERE</span> <span class="operator">NOT</span> condition;</code>
+                    </div>
+                </article>
+            </section>
+
+            <section id="insert_statement" class="main-section">
+                <header>
+                    <h2>Insert Statement</h2>
+                </header>
+                <article>
+                    <p>The INSERT INTO statement is used to insert new records in a table.</p>
+                    <h3>INSERT Syntax</h3>
+                    <p>It is possible to write the INSERT INTO statement in two ways.</p>
+                    <p>The first way specifies both the column names and the values to be inserted:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">INSERT INTO</span> table_name (column1, column2, column3, ...)</code>
+                        <code><span class="reserved-word">VALUES</span> (value1, value2, value3, ...);</code>
+                    </div>
+                    <p>If you are adding values for all the columns of the table, you do not need to specify the column
+                        names in the SQL query. However, make sure the order of the values is in the same order as the
+                        columns in the table. The INSERT INTO syntax would be as follows:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">INSERT INTO</span> table_name</code>
+                        <code><span class="reserved-word">VALUES</span> (value1, value2, value3, ...);</code>
+                    </div>
+                </article>
+            </section>
+
+            <section id="update_statement" class="main-section">
+                <header>
+                    <h2>Update Statement</h2>
+                </header>
+                <article>
+                    <p>The UPDATE statement is used to modify the existing records in a table.</p>
+                    <h3>UPDATE Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">UPDATE</span> table_name</code>
+                        <code><span class="reserved-word">SET</span> column1 = value1, column2 = value2, ...</code>
+                        <code><span class="reserved-word">WHERE</span> condition;</code>
+                    </div>
+                    <h3>UPDATE Table</h3>
+                    <p>The following SQL statement updates the first customer (CustomerID = 1) with a new contact person
+                        and
+                        a new city.</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">UPDATE</span> Customers</code>
+                        <code><span class="reserved-word">SET</span> ContactName = 'Alfred Schmidt', City= 'Frankfurt'</code>
+                        <code><span class="reserved-word">WHERE</span> CustomerID = 1;</code>
+                    </div>
+                    <h3>UPDATE Multiple Records</h3>
+                    <p>It is the WHERE clause that determines how many records will be updated.</p>
+                    <p>The following SQL statement will update the contactname to "Juan" for all records where country
+                        is
+                        "Mexico":</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">UPDATE</span> Customers</code>
+                        <code><span class="reserved-word">SET</span> ContactName='Juan'</code>
+                        <code><span class="reserved-word">WHERE</span> Country='Mexico';</code>
+                    </div>
+                    <h3>Update Warning!</h3>
+                    <p>Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">UPDATE</span> Customers</code>
+                        <code><span class="reserved-word">SET</span> ContactName='Juan';</code>
+                    </div>
+                </article>
+            </section>
+
+            <section id="delete_statement" class="main-section">
+                <header>
+                    <h2>Delete Statement</h2>
+                </header>
+                <article>
+                    <p>
+                        The DELETE statement is used to delete existing records in a table.
+                    </p>
+                    <h3>DELETE Syntax</h3>
+                    <div class="code-block">
+                        <code><span class="reserved-word">DELETE FROM</span> table_name</code>
+                        <code><span class="reserved-word">WHERE</span> condition;</code>
+                    </div>
+                    <p><em><strong>Note:</strong> Be careful when deleting records in a table! Notice the WHERE clause in the DELETE
+                        statement.
+                        The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all
+                        records in the table will be deleted!</em></p>
+                    <h3>SQL DELETE Example</h3>
+                    <p>The following SQL statement deletes the customer "Alfreds Futterkiste" from the "Customers"
+                        table:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">DELETE FROM</span> Customers</code>
+                        <code><span class="reserved-word">WHERE</span> CustomerName='Alfreds Futterkiste';</code>
+                    </div>
+                    <h3>Delete All Records</h3>
+                    <p>It is possible to delete all rows in a table without deleting the table. This means that the
+                        table structure, attributes, and indexes will be intact:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">DELETE FROM</span> table_name;</code>
+                    </div>
+                    <p>The following SQL statement deletes all rows in the "Customers" table, without deleting the
+                        table:</p>
+                    <div class="code-block">
+                        <code><span class="reserved-word">DELETE FROM</span> Customers;</code>
+                    </div>
+                </article>
+            </section>
+
+            <section id="reference" class="main-section">
+                <header>
+                    <h2>Reference</h2>
+                </header>
+                <article>
+                    <p>
+                        Al the documentation in this page is taken of <a
+                            href="https://www.w3schools.com/sql/default.asp" target="_blank">W3Schools.com / SQL</a>
+                    </p>
+                </article>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
